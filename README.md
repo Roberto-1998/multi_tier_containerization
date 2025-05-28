@@ -3,7 +3,7 @@
 
 This project demonstrates a multi-tier application architecture using containerization and virtualization technologies. It integrates various tools to simulate a production-like environment for educational and testing purposes.
 
-![Architecture Diagram](architecture/architecture.png)
+![Architecture Diagram](architecture/multi_tier_containerization.drawio.png)
 
 ## 📦 Technologies Used
 
