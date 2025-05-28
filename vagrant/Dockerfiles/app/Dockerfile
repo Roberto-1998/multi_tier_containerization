@@ -1,4 +1,6 @@
 FROM maven:3.9.9-eclipse-temurin-21-jammy as BUILD_IMAGE
+LABEL "Project"="vprofile"
+LABEL "Author"="Roberto"
 RUN apt-get update && \
 apt-get install -y git && \
 git clone -b containers https://github.com/Roberto-1998/vprofile-project.git
