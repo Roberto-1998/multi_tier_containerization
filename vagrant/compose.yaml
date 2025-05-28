@@ -23,19 +23,19 @@ services:
     ports:
       - "5672:5672"
     environment:
-      - RABBITMQ_DEFAULT_USER =guest
-      - RABBITMQ_DEFAULT_PASS =guest
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
 
   vproweb:
     container_name: vproweb
-    build: ./Dockerfile/web
+    build: ./Dockerfiles/web
     image: masterdevopscloud/vprofileweb
     ports:
       - "80:80"
 
   vproapp01:
     container_name: vproapp01
-    build: ./Dockerfile/app
+    build: ./Dockerfiles/app
     image: masterdevopscloud/vprofileapp
     ports:
       - "8080:8080"

@@ -22,3 +22,9 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo usermod -aG docker vagrant
 
 
+# Docker Compose 
+sudo -i
+cd /vagrant
+docker compose build
+docker compose up -d
+

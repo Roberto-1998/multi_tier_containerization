@@ -8,6 +8,6 @@ RUN mvn install
 
 FROM tomcat:10-jdk21
 RUN rm -rf /usr/local/tomcat/webapps/*
-COPY --from=BUILD_IMAGE /vprofile-project/target/vprofile.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=BUILD_IMAGE /vprofile-project/target/*.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
