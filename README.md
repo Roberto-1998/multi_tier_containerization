@@ -17,7 +17,7 @@ This project demonstrates a multi-tier application architecture using containeri
 
 ## 🖥️ Virtual Machine Configuration
 
-- **Private IP Address**: `192.168.56.10`
+- **Private IP Address**: `192.168.33.10`
 - **Operating System**: Ubuntu 20.04 LTS
 - **Resources**:
   - **CPU**: 2 cores
@@ -46,7 +46,7 @@ Ensure the following software is installed on your host machine:
 
    ```bash
    git clone https://github.com/Roberto-1998/multi_tier_containerization.git
-   cd multi_tier_containerization
+   cd multi_tier_containerization/vagrant
    ```
 
 2. **Launch the Virtual Machine**:
@@ -59,14 +59,14 @@ Ensure the following software is installed on your host machine:
 
    - Initialize the virtual machine with the specified configuration.
    - Install Docker and Docker Compose.
-   - Deploy the application containers as defined in the `docker-compose.yml` file.
+   - Deploy the application containers as defined in the `compose.yaml` file.
 
 3. **Access the Application**:
 
    Open your web browser and navigate to:
 
    ```
-   http://192.168.56.10
+   http://192.168.33.10
    ```
 
    Use the provided credentials to log in.
@@ -75,32 +75,30 @@ Ensure the following software is installed on your host machine:
 
 ```
 multi_tier_containerization/
+├── README.md
 ├── architecture/
-│   └── architecture.png
-├── vagrant/
-│   ├── Vagrantfile
-│   └── provision.sh
-├── docker/
-│   ├── docker-compose.yml
-│   ├── nginx/
-│   │   └── nginx.conf
-│   ├── app/
-│   │   └── Dockerfile
-│   └── db/
-│       └── init.sql
-├── .gitignore
-└── README.md
+│   └── multi_tier_containerization.drawio.png
+└── vagrant/
+    ├── Dockerfiles/
+    │   ├── app/
+    │   │   └── Dockerfile
+    │   ├── db/
+    │   │   ├── Dockerfile
+    │   │   └── db_backup.sql
+    │   └── web/
+    │       ├── Dockerfile
+    │       └── nginx.conf
+    ├── Vagrantfile
+    ├── compose.yaml
+    └── provisioner/
+        └── docker.sh
 ```
-
-- **architecture/**: Contains the architecture diagram.
-- **vagrant/**: Includes the `Vagrantfile` and provisioning scripts.
-- **docker/**: Houses Docker-related configurations and files.
 
 ## 📚 Additional Information
 
-- **Provisioning**: The `provision.sh` script automates the installation of Docker and Docker Compose inside the VM.
-- **Docker Compose**: Manages the multi-container setup, including the application, Nginx, and MySQL services.
-- **Data Persistence**: MySQL data is stored in a Docker volume to ensure persistence across container restarts.
+- **Provisioning**: The `docker.sh` script automates the installation of Docker and Docker Compose inside the VM.
+- **Docker Compose**: Defined in `compose.yaml`, it manages the multi-container setup, including the application, Nginx, and MySQL services.
+- **Data Persistence**: MySQL data is initialized using `db_backup.sql` and stored in volumes for persistence.
 
 ## 📬 Contact
 
